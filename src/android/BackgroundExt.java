@@ -115,7 +115,7 @@ class BackgroundExt {
         }
 
         if (action.equalsIgnoreCase("tasklist")) {
-            excludeFromTaskList();
+            excludeFromTaskList(exclude);
         }
 
         if (action.equalsIgnoreCase("dimmed")) {
