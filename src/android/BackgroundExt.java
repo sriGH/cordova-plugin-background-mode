@@ -90,7 +90,11 @@ class BackgroundExt {
         plugin.cordova.getThreadPool().execute(new Runnable() {
             @Override
             public void run() {
-                ext.execute(action, args, callback);
+                try {
+                    ext.execute(action, args, callback);
+                } catch (JSONException e) {
+                    Log.e(TAG, "Invalid JSON string: ", e);
+                }
             }
         });
     }
