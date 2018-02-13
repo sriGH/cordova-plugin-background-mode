@@ -183,9 +183,9 @@ exports.moveToForeground = function() {
  *
  * @return [ Void ]
  */
-exports.excludeFromTaskList = function() {
+exports.excludeFromTaskList = function(exclude) {
     if (this._isAndroid) {
-        cordova.exec(null, null, 'BackgroundMode', 'tasklist', []);
+        cordova.exec(null, null, 'BackgroundMode', 'tasklist', [exclude]);
     }
 };
 
