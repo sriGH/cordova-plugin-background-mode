@@ -40,6 +40,8 @@ import org.apache.cordova.PluginResult;
 import org.apache.cordova.PluginResult.Status;
 
 import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.lang.ref.WeakReference;
 import java.util.List;
