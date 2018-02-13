@@ -118,7 +118,7 @@ public class BackgroundMode extends CordovaPlugin {
             return true;
         }
 
-        BackgroundExt.execute(this, action, callback);
+        BackgroundExt.execute(this, action, args, callback);
         return true;
     }
 
