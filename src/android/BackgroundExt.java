@@ -78,7 +78,7 @@ class BackgroundExt {
      *                 calling back into JavaScript.
      */
     @SuppressWarnings("UnusedParameters")
-    static void execute (CordovaPlugin plugin, final String action,
+    static void execute (CordovaPlugin plugin, final String action, JSONArray args, 
                          final CallbackContext callback) {
 
         final BackgroundExt ext = new BackgroundExt(plugin);
@@ -86,7 +86,7 @@ class BackgroundExt {
         plugin.cordova.getThreadPool().execute(new Runnable() {
             @Override
             public void run() {
-                ext.execute(action, callback);
+                ext.execute(action, args, callback);
             }
         });
     }
@@ -100,7 +100,7 @@ class BackgroundExt {
      * @param callback The callback context used when
      *                 calling back into JavaScript.
      */
-    private void execute (String action, CallbackContext callback) {
+    private void execute (String action, JSONArray args, CallbackContext callback) {
 
         if (action.equalsIgnoreCase("optimizations")) {
             disableWebViewOptimizations();
@@ -115,7 +115,7 @@ class BackgroundExt {
         }
 
         if (action.equalsIgnoreCase("tasklist")) {
-            excludeFromTaskList(exclude);
+            excludeFromTaskList(args.getBoolean(0));
         }
 
         if (action.equalsIgnoreCase("dimmed")) {
