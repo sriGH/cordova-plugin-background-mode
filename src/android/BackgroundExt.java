@@ -83,7 +83,7 @@ class BackgroundExt {
      */
     @SuppressWarnings("UnusedParameters")
     static void execute (CordovaPlugin plugin, final String action, final JSONArray args, 
-                         final CallbackContext callback) {
+                         final CallbackContext callback) throws JSONException {
 
         final BackgroundExt ext = new BackgroundExt(plugin);
 
