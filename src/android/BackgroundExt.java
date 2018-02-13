@@ -39,6 +39,8 @@ import org.apache.cordova.CordovaWebView;
 import org.apache.cordova.PluginResult;
 import org.apache.cordova.PluginResult.Status;
 
+import org.json.JSONArray;
+
 import java.lang.ref.WeakReference;
 import java.util.List;
 
