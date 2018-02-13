@@ -104,7 +104,7 @@ class BackgroundExt {
      * @param callback The callback context used when
      *                 calling back into JavaScript.
      */
-    private void execute (String action, JSONArray args, CallbackContext callback) {
+    private void execute (String action, JSONArray args, CallbackContext callback) throws JSONException {
 
         if (action.equalsIgnoreCase("optimizations")) {
             disableWebViewOptimizations();
