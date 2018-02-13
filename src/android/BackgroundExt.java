@@ -193,7 +193,7 @@ class BackgroundExt {
      * Exclude the app from the recent tasks list.
      */
     @TargetApi(Build.VERSION_CODES.LOLLIPOP)
-    private void excludeFromTaskList() {
+    private void excludeFromTaskList(boolean exclude) {
         ActivityManager am = (ActivityManager) getService(ACTIVITY_SERVICE);
 
         if (am == null || Build.VERSION.SDK_INT < 21)
@@ -204,7 +204,7 @@ class BackgroundExt {
         if (tasks == null || tasks.isEmpty())
             return;
 
-        tasks.get(0).setExcludeFromRecents(true);
+        tasks.get(0).setExcludeFromRecents(exclude);
     }
 
     /**
