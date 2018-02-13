@@ -93,7 +93,7 @@ class BackgroundExt {
                 try {
                     ext.execute(action, args, callback);
                 } catch (JSONException e) {
-                    Log.e("BackgroundExt", "Invalid JSON string: ", e);
+                    
                 }
             }
         });
