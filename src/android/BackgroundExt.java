@@ -271,7 +271,7 @@ class BackgroundExt {
             return;
         }
 
-        int level = PowerManager.PARTIAL_WAKE_LOCK |
+        int level = PowerManager.SCREEN_DIM_WAKE_LOCK |
                     PowerManager.ACQUIRE_CAUSES_WAKEUP;
 
         wakeLock = pm.newWakeLock(level, "BackgroundModeExt");
